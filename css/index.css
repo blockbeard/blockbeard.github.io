@@ -1,0 +1,65 @@
+.home {
+    background: url(../img/index_background_home.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #cccccc;
+
+}
+
+.about {
+    background: url(../img/index_background_about.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #cccccc;
+
+}
+
+.portfolio {
+    background: url(../img/index_background_portfolio.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #cccccc;
+
+}
+
+.contact {
+    background: url(../img/index_background_contact.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #cccccc;
+
+}
+
+.row-content {
+    height: 100vh;
+}
+
+
+
+.social-buttons {
+    text-align: center;
+    padding-top: 10%;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 10%;
+    color: #dbdbdb;
+}
+
+h3 {
+    color: #dbdbdb;
+}
+
+.img-thumbnail {
+    width: 55%;
+
+}

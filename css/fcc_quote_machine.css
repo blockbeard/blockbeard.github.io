@@ -1,0 +1,22 @@
+h1 {
+    color: rgb(220, 220, 220);
+    text-align: center;
+}
+
+p {
+    color: rgb(200, 200, 200);
+    text-align: justify;
+}
+
+.quote {
+    color: rgb(220,220,220);
+    text-align: center;
+    background-color: black;
+}
+
+body {
+    background-image: url(../img/fcc_quote_machine_background.jpg);
+}
+
+
+
