@@ -25,6 +25,7 @@
     -o-background-size: cover;
     background-size: cover;
     background-color: #cccccc;
+    padding-top: 30px;
 
 }
 
@@ -36,6 +37,10 @@
     background-size: cover;
     background-color: #cccccc;
 
+}
+
+.about-text{
+    color: #5e5e5e;
 }
 
 .row-content {
