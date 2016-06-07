@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description"
+          content="A web app for practicing skate skills, you can select what skills to practice and set a timer and it will tell you what to do.">
+    <meta name="author" content="Chris Wilson">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Skate Skills</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/theme.css" rel="stylesheet">
+    <!-- Custom styles for this document -->
+    <link href="css/skate_skills.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body role="document">
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Skate Skills</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="https://blockbeard.github.io/">Home</a></li>
+                <li><a data-toggle="modal" data-target="#projectModal">This Project</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Chris Wilson <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://blockbeard.github.io/#about">About me</a></li>
+                        <li><a href="https://blockbeard.github.io/#contact">Contact me</a></li>
+                        <li><a href="https://github.com/blockbeard">My Github</a></li>
+                        <li><a href="https://blockbeard.github.io/#portfolio">My code portfolio</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<!-- project Modal -->
+<div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="aboutModalLabel">Skate Skills</h4>
+            </div>
+            <div class="modal-body">
+                When I've been practicing roller skating skills on my own I found a couple of problems. One of them is
+                that it is easy to just practice what you are already good at. The other one is that when you get tested
+                on your skills, or even just when you need to use them you don't know what is coming or when. When I
+                practice I think, OK, I'll do a transition, so I get set up to do a transition then do it when I'm
+                ready. I wanted something that would say "do a transition now" and I would just have to do it.
+                <br>
+                <a href="https://gitgub.com/blockbeard/skate_skills">Find this project on Github</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /project Modal -->
+<div class="container theme-showcase" role="main">
+    <button type="button" class="btn btn-block btn-success" onclick="start()">GO!</button>
+    <button type="button" class="btn btn-block btn-danger" onclick="stop()">STOP!</button>
+    <br>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+            <div class="panel with-nav-tabs panel-success">
+                <div class="panel-heading">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#skills" data-toggle="tab">Skils</a></li>
+                        <li><a href="#Stops" data-toggle="tab">Stops</a></li>
+                        <li><a href="#Transitions" data-toggle="tab">Transitions</a></li>
+                        <li><a href="#Recovery" data-toggle="tab">Recovery</a></li>
+                        <li><a href="#Jumps" data-toggle="tab">Jumps</a></li>
+                        <li><a href="#Settings" data-toggle="tab">Settings</a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="skills">
+                            <button type="button" id="minSkills" class="btn btn-block btn-primary"
+                                    onclick="minimumSkills()">Minimum Skills
+                            </button>
+                            <br>
+                            <button type="button" id="allSkills" class="btn btn-block btn-primary"
+                                    onclick="allSkills()">All Skills
+                            </button>
+                            <br>
+                            <button type="button" id="customSkills" class="btn btn-block btn-primary"
+                                    onclick="customSkills()">Custom
+                            </button>
+                            <br>
+                            <button type="button" id="clearSkills" class="btn btn-block btn-danger"
+                                    onclick="clearSkills()">Clear All
+                            </button>
+
+                        </div>
+                        <div class="tab-pane fade" id="Stops">
+                            <h4>
+                                <label><input type="checkbox" id="stopT"> T stop </label>
+                                <label class="small"><input type="checkbox" id="stopTWhistle"> Whistle</label>
+                            </h4>
+                            <h4>
+                                <label><input type="checkbox" id="stopPlow"> Plow Stop </label>
+                                <label class=small><input type="checkbox" id="stopPlowWhistle"> Whistle</label>
+                            </h4>
+                            <h4>
+                                <label><input type="checkbox" id="stopLeftPlow"> Left Foot Plow </label>
+                                <label class=small><input type="checkbox" id="stopLeftPlowWhistle"> Whistle</label>
+                            </h4>
+                            <h4>
+                                <label><input type="checkbox" id="stopRightPlow"> Right Foot Plow </label>
+                                <label class=small><input type="checkbox" id="stopRightPlowWhistle"> Whistle</label>
+                            </h4>
+                            <h4>
+                                <label><input type="checkbox" id="stopHockeyLeft"> Hockey Stop Left </label>
+                                <label class=small><input type="checkbox" id="stopHockeyLeftWhistle"> Whistle</label>
+                            </h4>
+                            <h4>
+                                <label><input type="checkbox" id="stopHockeyRight"> Hockey Stop Right </label>
+                                <label class=small><input type="checkbox" id="stopHockeyRightWhistle"> Whistle</label>
+                            </h4>
+                            <h4>
+                                <label><input type="checkbox" id="stopDerby"> Derby Stop </label>
+                                <label class=small><input type="checkbox" id="stopDerbyWhistle"> Whistle</label>
+                            </h4>
+                        </div>
+                        <div class="tab-pane fade" id="Transitions">
+                            <h4>
+                                <label><input type="checkbox" id="transitionIn"> Transition In</label>
+                            </h4>
+                            <h4>
+                                <label><input type="checkbox" id="transitionOut"> Transition Out</label>
+                            </h4>
+                            <h4>
+                                <label><input type="checkbox" id="transitionThreeSixty"> Transition 360</label>
+                            </h4>
+                        </div>
+                        <div class="tab-pane fade" id="Recovery">
+                            <h4>
+                                <label><input type="checkbox" id="recoveryLeftKnee"> Left Knee Tap</label>
+                            </h4>
+                            <h4>
+                                <label><input type="checkbox" id="recoveryDoubleLeftKnee"> Double Left Knee
+                                    Tap</label>
+                            </h4>
+                            <h4>
+                                <label><input type="checkbox" id="recoveryRightKnee"> Right Knee Tap</label>
+                            </h4>
+                            <h4>
+                                <label><input type="checkbox" id="recoveryDoubleRightKnee"> Double Right Knee
+                                    Tap</label>
+                            </h4>
+                            <h4>
+                                <label><input type="checkbox" id="recoveryKneeSlide"> Double Knee Slide</label>
+                            </h4>
+                        </div>
+                        <div class="tab-pane fade" id="Jumps">
+
+                            <h4>
+                                <label><input type="checkbox" id="jump"> Jump</label>
+                            </h4>
+                            <h4>
+                                <label><input type="checkbox" id="hop"> Hop</label>
+                            </h4>
+                            <h4>
+                                <label><input type="checkbox" id="lateralHop"> Lateral Hop</label>
+                            </h4>
+
+                        </div>
+                        <div class="tab-pane fade" id="Settings">
+                            <h4>
+                                <label><input type="number" min="0" max="10" value="4" id="stopTimeInput"> seconds for
+                                    stops</label>
+                            </h4>
+                            <h4>
+                                <label><input type="number" min="2" max="60" value="10" id="timeToNextInput"> seconds
+                                    between skills</label>
+                            </h4>
+                        </div>
+
+                    </div>
+                </div>
+1            </div>
+        </div>
+
+
+    </div>
+    <div>
+        <h4>Select some skills, either as a group from the skills panel or individually from the other tabs. Then press
+            <em>GO!</em> to have it to select a random one from the selection you chose every few seconds. <br>
+            You can change the length of time between the whistles on stops to practice doing them quickly and adjust
+            the length of time between skills in the settings tab. </h4>
+    </div>
+
+</div> <!-- /container -->
+
+<!-- JavaScript necessary for this document -->
+<script src="js/skate_skills.js"></script>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/docs.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
