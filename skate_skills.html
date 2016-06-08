@@ -99,7 +99,7 @@
             <div class="panel with-nav-tabs panel-success">
                 <div class="panel-heading">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#skills" data-toggle="tab">Skils</a></li>
+                        <li class="active"><a href="#skills" data-toggle="tab">Skills</a></li>
                         <li><a href="#Stops" data-toggle="tab">Stops</a></li>
                         <li><a href="#Transitions" data-toggle="tab">Transitions</a></li>
                         <li><a href="#Recovery" data-toggle="tab">Recovery</a></li>
@@ -125,38 +125,97 @@
                             <button type="button" id="clearSkills" class="btn btn-block btn-danger"
                                     onclick="clearSkills()">Clear All
                             </button>
+                        </div>
 
-                        </div>
                         <div class="tab-pane fade" id="Stops">
-                            <h4>
-                                <label><input type="checkbox" id="stopT"> T stop </label>
-                                <label class="small"><input type="checkbox" id="stopTWhistle"> Whistle</label>
-                            </h4>
-                            <h4>
-                                <label><input type="checkbox" id="stopPlow"> Plow Stop </label>
-                                <label class=small><input type="checkbox" id="stopPlowWhistle"> Whistle</label>
-                            </h4>
-                            <h4>
-                                <label><input type="checkbox" id="stopLeftPlow"> Left Foot Plow </label>
-                                <label class=small><input type="checkbox" id="stopLeftPlowWhistle"> Whistle</label>
-                            </h4>
-                            <h4>
-                                <label><input type="checkbox" id="stopRightPlow"> Right Foot Plow </label>
-                                <label class=small><input type="checkbox" id="stopRightPlowWhistle"> Whistle</label>
-                            </h4>
-                            <h4>
-                                <label><input type="checkbox" id="stopHockeyLeft"> Hockey Stop Left </label>
-                                <label class=small><input type="checkbox" id="stopHockeyLeftWhistle"> Whistle</label>
-                            </h4>
-                            <h4>
-                                <label><input type="checkbox" id="stopHockeyRight"> Hockey Stop Right </label>
-                                <label class=small><input type="checkbox" id="stopHockeyRightWhistle"> Whistle</label>
-                            </h4>
-                            <h4>
-                                <label><input type="checkbox" id="stopDerby"> Derby Stop </label>
-                                <label class=small><input type="checkbox" id="stopDerbyWhistle"> Whistle</label>
-                            </h4>
+                            <div class="stops-and-whistles">
+                                <div class="col-xs-6 stops">
+                                    <h4>
+                                        <label><input type="checkbox" id="stopT"> T stop</label>
+                                    </h4>
+                                </div>
+                                <div class="col-xs-6 whistles">
+                                    <h4>
+                                        <label class="small"><input type="checkbox" id="stopTWhistle"> Whistle</label>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="stops-and-whistles">
+                                <div class="col-xs-6 stops">
+                                    <h4>
+                                        <label><input type="checkbox" id="stopPlow"> Plow Stop </label>
+                                    </h4>
+                                </div>
+                                <div class="col-xs-6 whistles">
+                                    <h4>
+                                        <label class="small"><input type="checkbox" id="stopPlowWhistle"> Whistle</label>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="stops-and-whistles">
+                                <div class="col-xs-6 stops">
+                                    <h4>
+                                        <label><input type="checkbox" id="stopLeftPlow"> Left Foot Plow </label>
+                                    </h4>
+                                </div>
+                                <div class="col-xs-6 whistles">
+                                    <h4>
+                                        <label class="small"><input type="checkbox" id="stopLeftPlowWhistle"> Whistle</label>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="stops-and-whistles">
+                                <div class="col-xs-6 stops">
+                                    <h4>
+                                        <label><input type="checkbox" id="stopRightPlow"> Right Foot Plow </label>
+                                    </h4>
+                                </div>
+                                <div class="col-xs-6 whistles">
+                                    <h4>
+                                        <label class="small"><input type="checkbox" id="stopRightPlowWhistle"> Whistle</label>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="stops-and-whistles">
+                                <div class="col-xs-6 stops">
+                                    <h4>
+                                        <label><input type="checkbox" id="stopHockeyLeft"> Hockey Stop Left </label>
+                                    </h4>
+                                </div>
+                                <div class="col-xs-6 whistles">
+                                    <h4>
+                                        <label class="small"><input type="checkbox" id="stopHockeyLeftWhistle">
+                                            Whistle</label>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="stops-and-whistles">
+                                <div class="col-xs-6 stops">
+                                    <h4>
+                                        <label><input type="checkbox" id="stopHockeyRight"> Hockey Stop Right </label>
+                                    </h4>
+                                </div>
+                                <div class="col-xs-6 whistles">
+                                    <h4>
+                                        <label class="small"><input type="checkbox" id="stopHockeyRightWhistle">
+                                            Whistle</label>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="stops-and-whistles">
+                                <div class="col-xs-6 stops">
+                                    <h4>
+                                        <label><input type="checkbox" id="stopDerby"> Derby Stop </label>
+                                    </h4>
+                                </div>
+                                <div class="col-xs-6 whistles">
+                                    <h4>
+                                        <label class="small"><input type="checkbox" id="stopDerbyWhistle"> Whistle</label>
+                                    </h4>
+                                </div>
+                            </div>
                         </div>
+
                         <div class="tab-pane fade" id="Transitions">
                             <h4>
                                 <label><input type="checkbox" id="transitionIn"> Transition In</label>
