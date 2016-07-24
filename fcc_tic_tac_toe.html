@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Portfolio site to showcase my work. ">
+    <meta name="description" content="Tic Tac Toe Game. Written for freeCodeCamp">
     <meta name="author" content="Chris Wilson">
     <link rel="icon" href="favicon.ico">
 
-    <title>Chris's Portfolio</title>
+    <title>Tic Tac Toe</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -20,11 +20,8 @@
 
     <!-- Custom styles for this template -->
     <link href="css/theme.css" rel="stylesheet">
-    <!-- Custom style for this document -->
-    <link href="css/index.css" rel="stylesheet">
-    <link rel='stylesheet' media='screen and (min-width: 971px)' href='css/index_medium.css'>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Custom styles for this document -->
+    <link href="css/fcc_tic_tac_toe.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -33,7 +30,7 @@
     <![endif]-->
 </head>
 
-<body role="document">
+<body role="document" onload="$('#choiceModal').modal()">
 
 <!-- Fixed navbar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -46,11 +43,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Chris's Portfolio</a>
+            <a class="navbar-brand" href="#">Tic Tac Toe</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="https://blockbeard.github.io/">Home</a></li>
                 <li><a data-toggle="modal" data-target="#projectModal">This Project</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -63,11 +60,6 @@
                     </ul>
                 </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#about">About me</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
@@ -79,16 +71,12 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="aboutModalLabel">Chris's Portfolio</h4>
+                <h4 class="modal-title" id="aboutModalLabel">Tic Tac Toe</h4>
             </div>
             <div class="modal-body">
-                Originally I made this as part of the Free Code Camp course. I have updated it with an up-to date list
-                of projects, though I suspect that as I am still learning I will get through a large number of small
-                projects so some will have to fall off to avoid excess clutter. I have set this as my Github Pages page
-                though I suspect I might end up changing it as adding everything manually isn't going to be ideal. We
-                will see!
+                A tic tac toe (or noughts and crosses to us Brits) game written for my FCC course.
                 <br>
-                <a href="https://github.com/blockbeard/blockbeard.github.io">Find this project on Github</a>
+                <a href="https://github.com/blockbeard/fcc_tic_tac_toe">Find this project on Github</a>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -97,184 +85,44 @@
     </div>
 </div>
 <!-- /project Modal -->
-<div class="content container-fluid" role="main">
-    <div class="row row-content home" id="#home"><a name="home"></a>
-        <h1>Chris Wilson</h1>
-        <br>
-        <h3 class="text-center">Scientist, coder, geek, all around awesome guy.</h3>
-        <br>
-        <div class="col-xs-push-2 col-xs-8">
-            <hr>
-        </div>
-        <br>
-
-        <div class="social-buttons col-xs-push-2 col-xs-8">
-            <a href="https://uk.linkedin.com/in/blockbeard" class="btn btn-default btn-lg" type="button">
-                <i class="fa fa-linkedin-square"></i> LinkedIn
-            </a>
-
-            <a href="http://www.github.com/blockbeard" class="btn btn-default btn-lg" type="button">
-                <i class="fa fa-github"></i> Github
-            </a>
-
-            <a href="http://mailto:blockbeard8@gmail.com" class="btn btn-default btn-lg" type="button">
-                <i class="fa fa-envelope"></i> Email
-            </a>
-
-            <a href="https://www.facebook.com/profile.php?id=197813131" class="btn btn-default btn-lg" type="button">
-                <i class="fa fa-facebook-square"></i> Facebook
-            </a>
-
-
-        </div>
-    </div>
-
-    <div class="row row-content about" id="#about"><a name="about"></a>
-        <div class="col-xs-12 col-md-6 col-md-offset-2">
-            <h1 class="about-text">
-                Chris Wilson
-            </h1>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-md-6 col-md-offset-2">
-                <h3 class="about-text">
-                    I finished my PhD in Molecular and Cellular Biology at the end of 2015. While I waited for it to be
-                    examined I have been learning to code. Partly for my own satisfaction partly with the thought of
-                    doing it
-                    as a career in the future.<br>
-                    So far I have some experience with HTML, CSS and Javascript but as I work through the <a
-                        href="http://www.freecodecamp.com">freeCodeCamp</a> curriculum I expect to become fluent in
-                    jQuery,
-                    React and MongoDB.
-                </h3>
+<!-- choice modal -->
+<div class="modal fade" id="choiceModal" tabindex="-1" role="dialog" aria-labelledby="choiceModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Tic Tac Toe</h4>
             </div>
-            <div class="col-xs-4 col-md-3 text-center">
-                <img src="img/index_my_pic.jpg"
-                     class="img-circle img-responsive my_pic" id="#my_pic">
+            <div class="modal-body">
+                <p>Choose your weapon&hellip;</p>
             </div>
-        </div>
-
-
-    </div>
-
-
-    <div class="row portfolio text-center" id="#portfolio"><a name="portfolio"></a>
-        <div class="col-xs-12 col-md-6 col-md-offset-3">
-        <h1>
-            Portfolio
-        </h1>
+            <div class="modal-footer">
+                <button onclick="chooseYourWeapon('X')" type="button" class="btn btn-default" data-dismiss="modal">X</button>
+                <button onclick="chooseYourWeapon('O')" type="button" class="btn btn-default" data-dismiss="modal" >O</button>
             </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <a href="fcc_javascript_calculator.html">
-                <h4>JavaScript Calculator</h4>
-                <img src="img/index_thumb_javascript_calculator.jpg"
-                 class="img-thumbnail img-responsive">
-            </a>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <a href="fcc_wikipedia_viewer.html">
-                <h4>Wikipedia Viewer</h4>
-            <img src="img/index_thumb_wikipedia_viewer.jpg"
-                 class="img-thumbnail img-responsive">
-                </a>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <a href="fcc_weather_app.html">
-                <h4>Local Weather</h4>
-            <img src="img/index_thumb_weather_app.jpg"
-                 class="img-thumbnail img-responsive">
-                </a>
-        </div>
+<div class="modal fade" id="drawModal" tabindex="-1" role="dialog" aria-labelledby="drawModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Tic Tac Toe</h4>
+            </div>
+            <div class="modal-body">
+                <p>The only winning move is not to play</p>
+            </div>
+            <div class="modal-footer">
+                Why not have a nice game of chess instead?
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <a href="fcc_twitch_viewer.html">
-                <h4>Twitch Viewer</h4>
-            <img src="img/index_thumb_twitch_viewer.jpg"
-                 class="img-thumbnail img-responsive">
-                </a>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <a href="fcc_quote_machine.html">
-                <h4>Quote Machine</h4>
-            <img src="img/index_thumb_quote_machine.jpg"
-                 class="img-thumbnail img-responsive">
-                </a>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <a href="contrast_bathing_timer.html">
-                <h4>Contrast Bathing Timer</h4>
-            <img src="img/index_thumb_contrast_bathing_timer.jpg"
-                 class="img-thumbnail img-responsive">
-                </a>
-
-</div>
-
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <a href="fcc_tribute_page.html">
-                <h4>Tribute Page</h4>
-                <img src="img/index_thumb_tribute_page.jpg"
-                 class="img-thumbnail img-responsive">
-            </a>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <a href="fcc_pomodoro_clock.html">
-                <h4>Pomodoro Clock</h4>
-                <img src="img/index_thumb_pomodoro_clock.jpg"
-                 class="img-thumbnail img-responsive">
-                </a>
-
-    </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <a href="skate_skills.html">
-                <h4>Skate Skills</h4>
-                <img src="img/index_thumb_skate_skills.jpg"
-                     class="img-thumbnail img-responsive">
-            </a>
-
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <a href="fcc_tic_tac_toe.html">
-                <h4>Tic Tac Toe</h4>
-                <img src="img/index_thumb_tic_tac_toe.jpg"
-                     class="img-thumbnail img-responsive">
-            </a>
-
-        </div>
-        </div>
+<div class="container theme-showcase" role="main">
 
 
-    <div class="row row-content contact" id="#contact"><a name="contact"></a>
-        <div class="col-xs-12 col-md-offset-2 col-md-6">
-            <h1>
-                Contact
-            </h1>
-            <h3>
-                If you have any projects you would be interested in me working on, want to help with something I'm working on or just want a chat you can find me with the social media
-                buttons on the right or drop me an <a href="mailto:blockbeard8@gmail.com">email</a>.
-            </h3>
-        </div>
-        <div class="social-buttons col-xs-12 col-md-2">
-            <a href="https://uk.linkedin.com/in/blockbeard" class="btn btn-default btn-lg" type="button">
-                <i class="fa fa-linkedin-square"></i> LinkedIn
-            </a>
-<br>
-            <a href="http://www.github.com/blockbeard" class="btn btn-default btn-lg" type="button">
-                <i class="fa fa-github"></i> Github
-            </a>
-<br>
-            <a href="http://mailto:blockbeard8@gmail.com" class="btn btn-default btn-lg" type="button">
-                <i class="fa fa-envelope"></i> Email
-            </a>
-<br>
-            <a href="https://www.facebook.com/profile.php?id=197813131" class="btn btn-default btn-lg" type="button">
-                <i class="fa fa-facebook-square"></i> Facebook
-            </a>
-        </div>
-
-    </div>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <!--
     <div class="jumbotron">
@@ -328,147 +176,33 @@
 
 
     <!-- Tables -->
-    <!--
-    <div class="page-header">
-      <h1>Tables</h1>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="col-md-6">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+
 
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 col-md-offset-3">
         <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
-            </tr>
-          </thead>
           <tbody>
             <tr>
-              <td rowspan="2">1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+                <td><div  id = "square 0" onclick="humanInput(0)" class="content"></div></td>
+                <td><div  id = "square 1" onclick="humanInput(1)" class="content"></div></td>
+                <td><div  id = "square 2" onclick="humanInput(2)" class="content"></div></td>
             </tr>
             <tr>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@TwBootstrap</td>
+                <td><div  id = "square 3" onclick="humanInput(3)" class="content"></div></td>
+                <td><div  id = "square 4" onclick="humanInput(4)" class="content"></div></td>
+                <td><div  id = "square 5" onclick="humanInput(5)" class="content"></div></td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
+                <td><div  id = "square 6" onclick="humanInput(6)" class="content"></div></td>
+                <td><div  id = "square 7" onclick="humanInput(7)" class="content"></div></td>
+                <td><div  id = "square 8" onclick="humanInput(8)" class="content"></div></td>
             </tr>
-            <tr>
-              <td>3</td>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
+
           </tbody>
         </table>
       </div>
-      <div class="col-md-6">
-        <table class="table table-condensed">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    -->
+</div>
+
 
     <!--Thumbnails-->
     <!--
@@ -876,7 +610,8 @@
 -->
 </div> <!-- /container -->
 
-
+<!-- JavaScript necessary for this document -->
+<script src="js/fcc_tic_tac_toe.js"></script>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
