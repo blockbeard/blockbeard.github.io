@@ -14,7 +14,7 @@ function chooseYourWeapon(selected) {
         playerChoice = "<img src='img/fcc_tic_tac_toe_x_mark.png' alt='X' style='width:100%; height:100%'>";
         compChoice = "<img src='img/fcc_tic_tac_toe_o_mark.png' alt='O' style='width:100%; height:100%'>";
     } else {
-        playerChoice = "<img src='img/fcc_tic_tac_toe_o-mark.png' alt='O' style='width:100%; height:100%'>";
+        playerChoice = "<img src='img/fcc_tic_tac_toe_o_mark.png' alt='O' style='width:100%; height:100%'>";
         compChoice = "<img src='img/fcc_tic_tac_toe_x_mark.png' alt='X' style='width:100%; height:100%'>";
     }
 }
