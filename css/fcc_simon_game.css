@@ -1,0 +1,56 @@
+#circle {
+    display: block;
+    padding: 0;
+    width: 200px;
+    height: 200px;
+    border: 1px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.quarter {
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 100px;
+}
+
+#green {
+    background-color: green;
+}
+
+#red {
+    background-color: red;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#blue {
+    background-color: blue;
+}
+
+.greenFlash {
+    background-color: lightgreen;
+}
+
+.redFlash {
+    background-color: lightcoral;
+}
+
+.yellowFlash {
+    background-color: lightyellow;
+}
+
+.blueFlash {
+    background-color: lightblue;
+}
+
+@font-face {
+    font-family: bitwise; src: url('../fonts/bitwise/bitwise.ttf');
+}
+.eighties {
+    font-family: bitwise, "Courier New", courier, monospace;
+}
